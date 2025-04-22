@@ -6,6 +6,10 @@ import { exec } from 'child_process';
 const app = express();
 app.use(cors());
 
+app.get('/',(req,res)=>{
+    console.log("healthcheck");
+    res.json("healthcheck")
+})
 // GET /gateway → returns your hotspot’s gateway IP
 app.get('/gateway', (req, res) => {
   // 'ip route' outputs something like:
